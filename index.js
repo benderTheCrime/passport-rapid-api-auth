@@ -7,7 +7,7 @@ module.exports = class RapidAPIPassportStrategy extends PassportStrategy {
     super(params, verify)
 
     if (isPlainObject(params)) {
-      this.secret = params.secret;
+      this.secret = params.proxySecret
     }
 
     if (typeof verify === 'function') {
@@ -66,19 +66,23 @@ function getRapidAPIProxySecret(headers) {
   return headers['x-rapidapi-proxy-secret'] || null
 }
 
+function getRapidAPISubscription(headers) {
+  return headers ['x-rapidapi-subscription'] || null
+}
+
 function getRapidAPIUser(headers) {
   return headers['x-rapidapi-user'] || null
 }
 
 function getRapidAPIVersion(headers) {
-  return headers ['x-rapidapi-version'] || null;
+  return headers ['x-rapidapi-version'] || null
 }
 
 function normalizeHeaders(headers) {
   return Object.keys(headers).reduce(normalize, {})
 
   function normalize(normalizedHeaders, key) {
-    normalizedHeaders[key.toLowerCase()] = normalizedHeaders[key]
+    normalizedHeaders[key.toLowerCase()] = headers[key]
     return normalizedHeaders
   }
 }
