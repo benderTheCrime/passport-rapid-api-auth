@@ -4,14 +4,17 @@
   "description": "Provides an additional layer of security for RapidAPI APIs built on Node.js.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha index.test.js"
   },
   "keywords": [],
   "author": "Joe Groseclose <@benderTheCrime>",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-benderthecrime": "^2.3.0"
+    "eslint-plugin-benderthecrime": "^2.3.0",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
   },
   "dependencies": {
     "is-plain-obj": "^2.0.0",
