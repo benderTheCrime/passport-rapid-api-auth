@@ -1,5 +1,7 @@
 # passport-rapid-api-auth
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/benderTheCrime/passport-rapid-api-auth.svg)](https://greenkeeper.io/)
+
 Provides an additional layer of security for RapidAPI APIs built on Node.js.
 
 ## Installation
