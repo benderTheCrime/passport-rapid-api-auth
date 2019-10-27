@@ -73,4 +73,9 @@ describe('RapidAPIPassportStrategy', function() {
       }, 401))
     })
   })
+  describe('Strategy', function() {
+    it('check that the static getter for strategy returns RapidAPIPassportStrategy', function() {
+      chai.assert.equal(RapidAPIPassportStrategy, RapidAPIPassportStrategy.Strategy)
+    })
+  })
 })
