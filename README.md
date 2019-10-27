@@ -14,15 +14,21 @@ npm i passport-rapid-api-auth
 const passport = require('passport')
 const {Strategy: RapidAPIPassportStrategy} = require('passport-rapid-api-auth')
 
-passport.use('rapid-api', new Strategy({proxySecret: 'RAPID_API_PROXY_SECRET'}, verify)
+const authParams = {
+  passReqToCallback: false,
+  proxySecret: 'RAPID_API_PROXY_SECRET',
+}
+
+passport.use('rapid-api', new Strategy(authParams, verify)
 
 app.use(passport.initialize())
 app.use(passport.session())
 
 function verify(...args) {
-  const [user, _, next] = args
+  const [user, id, next] = args
 
   return next(null, {
+    id,
     name: user.name,
     subscription: user.subscription,
     version: user.version,

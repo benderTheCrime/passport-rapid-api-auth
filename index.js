@@ -12,6 +12,8 @@ module.exports = class RapidAPIPassportStrategy extends PassportStrategy {
 
     if (typeof verify === 'function') {
       this.verify = verify
+    } else {
+      throw new TypeError('A verify parameter must be provided and be a valid function.')
     }
   }
 
@@ -27,7 +29,7 @@ module.exports = class RapidAPIPassportStrategy extends PassportStrategy {
 
     if (secret) {
       if (this.secret === secret) {
-        return this.success({
+        const parsedUser = {
           // X-RapidAPI-User
           // The name of the user that's making the request.
           name: getRapidAPIUser(normalizedHeaders),
@@ -44,7 +46,29 @@ module.exports = class RapidAPIPassportStrategy extends PassportStrategy {
           // X-RapidAPI-Version
           // The version of the proxy.
           version: getRapidAPIVersion(normalizedHeaders),
-        }, {})
+        }
+        const verified = (e, user) => {
+          if (e) {
+            return this.error(e)
+          }
+      
+          if (!user) {
+            const e = new Error('Missing user after validation.')
+            return this.fail({
+              errors: [e.message],
+              result: null,
+            }, 401)
+          }
+      
+          return this.success(user, {})
+        }
+        const verifyArgs = [parsedUser, parsedUser.name, verified];
+
+        if (this.passReqToCallback) {
+          verifyArgs.shift(req)
+        }
+        
+        return this.verify(...verifyArgs);
       }
 
       const e = new Error('RapidAPI Proxy Secret is invalid.')
