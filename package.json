@@ -1,6 +1,6 @@
 {
   "name": "passport-rapid-api-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides an additional layer of security for RapidAPI APIs built on Node.js.",
   "main": "index.js",
   "scripts": {
