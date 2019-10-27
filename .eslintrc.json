@@ -1,0 +1,68 @@
+{
+    "env": {
+        "node": true
+    },
+    "extends": [
+        "plugin:benderthecrime/recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Map": true,
+        "Promise": true,
+        "Set": true,
+        "zE": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "ecmaVersion": 2019
+        }
+    },
+    "plugins": [
+        "benderthecrime",
+        "react"
+    ],
+    "rules": {
+        "capitalized-comments": 0,
+        "complexity": 0,
+        "eol-last": [2, "always"],
+        "func-names": 0,
+        "func-style": 0,
+        "id-blacklist": 0,
+        "id-length": 0,
+        "indent": [2, 2],
+        "lines-around-comment": 0,
+        "max-lines": [2, 400],
+        "max-statements": 0,
+        "multiline-comment-style": 0,
+        "newline-after-var": 0,
+        "no-await-in-loop": 0,
+        "no-case-declarations": 0,
+        "no-confusing-arrow": 0,
+        "no-console": 0,
+        "no-empty": 0,
+        "no-invalid-this": 0,
+        "no-magic-numbers": 0,
+        "no-prototype-builtins": 0,
+        "no-restricted-syntax": 0,
+        "no-warning-comments": 0,
+        "object-curly-newline": 0,
+        "object-curly-spacing": [2, "never"],
+        "semi": [2, "never"],
+        "space-before-function-paren": [
+            2, 
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "createClass": "createReactClass",
+            "pragma": "React",
+            "version": "detect"
+          }
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "passport-rapid-api-auth",
+  "version": "1.0.0",
+  "description": "Provides an additional layer of security for RapidAPI APIs built on Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Joe Groseclose <@benderTheCrime>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-benderthecrime": "^2.3.0"
+  },
+  "dependencies": {
+    "is-plain-obj": "^2.0.0",
+    "passport-strategy": "^1.0.0"
+  }
+}
