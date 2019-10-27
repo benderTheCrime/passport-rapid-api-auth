@@ -60,6 +60,10 @@ module.exports = class RapidAPIPassportStrategy extends PassportStrategy {
       result: null,
     }, 401)
   }
+
+  static get Strategy() {
+    return RapidAPIPassportStrategy
+  }
 }
 
 function getRapidAPIProxySecret(headers) {

@@ -6,7 +6,14 @@
   "scripts": {
     "test": "mocha index.test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "RapidAPI",
+    "auth",
+    "authentication",
+    "passport",
+    "rapidapi",
+    "security"
+  ],
   "author": "Joe Groseclose <@benderTheCrime>",
   "license": "MIT",
   "devDependencies": {
