@@ -21,7 +21,7 @@
     "eslint": "^6.6.0",
     "eslint-plugin-benderthecrime": "^2.3.0",
     "mocha": "^6.2.2",
-    "sinon": "^7.5.0"
+    "sinon": "^8.0.0"
   },
   "dependencies": {
     "is-plain-obj": "^2.0.0",
