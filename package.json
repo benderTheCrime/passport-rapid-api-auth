@@ -24,7 +24,7 @@
     "sinon": "^7.5.0"
   },
   "dependencies": {
-    "is-plain-obj": "^2.0.0",
+    "is-plain-obj": "^2.1.0",
     "passport-strategy": "^1.0.0"
   }
 }
